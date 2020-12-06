@@ -1,0 +1,41 @@
+﻿@model saveSystem.Domain.Subject
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<div class="text-center">
+   
+    <h1>Додати:</h1>
+    <div class="row">
+        <form asp-controller="Home" asp-action="SubjectAdd" enctype="multipart/form-data" method="post">
+            <input type="hidden" asp-for="Id" />
+            
+            <div asp-validation-summary="All"></div>
+
+            <div class="form-group">
+                <label asp-for="SubjectName"></label><br>
+                <input asp-for="SubjectName" /><br>
+                <span asp-validation-for="SubjectName" class="text-danger"></span>
+            </div>                          
+            <div class="form-group">
+                <label asp-for="Course"></label><br>
+                <input asp-for="Course" class="form-control" /><br>
+                <span asp-validation-for="Course" class="text-danger"></span>
+            </div>                                             
+            <div class="form-group">
+                <label asp-for="SubjectFile"></label><br>
+                <input asp-for="SubjectFile" accept=".pdf" /><br>
+                <span asp-validation-for="SubjectFile" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <br><input type="submit" value="Зберегти" class="btn btn-primary" />
+            </div>
+
+           
+        </form>
+    </div>
+</div>
+
